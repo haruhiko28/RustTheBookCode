@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
     // -------------------------------------------------------
     // 変数と可変性
@@ -79,6 +81,29 @@ fn main() {
               "August", "September", "October", "November", "December"];
 
     let a: [i32; 5] = [1,2,3,4,5];
-    let a = [3; 5];
+    let a = [3; 5];  // let a = [3, 3, 3, 3, 3];
 
+    let first = a[0];
+    let second = a[1];
+
+    println!("Please enter an array index."); // 配列の何番目の要素にアクセスするか指定してください
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim() // 文字列の先頭と末尾から空白文字を取り除くために使用
+        .parse()
+        .expect("Index entered was not a number");
+    // 入力された値は数字ではありません
+
+    let element = a[index];
+
+    println!(
+        "The value of the element at index {} is {}",
+        index, element
+    );
 }
