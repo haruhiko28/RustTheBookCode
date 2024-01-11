@@ -37,8 +37,16 @@ fn main() {
     let s = s1 + "-" + &s2 + "-" + &s3;
 
     let hello = "Здравствуйте";
-    let answer = &hello[0];
+    // let answer = &hello[0];
 
     let hello = "Здравствуйте";
     let s = &hello[0..4];
+
+    for c in "नमस्ते".chars() {
+        println!("{}", c);
+    }
+    
+    for b in "नमस्ते".bytes() {
+        println!("{}", b);
+    }
 }
