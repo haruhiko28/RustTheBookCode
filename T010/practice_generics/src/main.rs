@@ -23,6 +23,11 @@ fn largest_T<T>(list: &[T]) -> T {
     largest
 }
 
+struct Point<T, U> {
+    x: T,
+    y: U,
+}
+
 fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
 
@@ -56,4 +61,8 @@ fn main() {
 
     let result = largest_T(&char_list);
     println!("The largest char is {}", result);
+
+    let both_integer = Point { x: 5, y: 10 };
+    let both_float = Point { x: 1.0, y: 4.0 };
+    let integer_and_float = Point { x: 5, y: 4.0 };
 }
